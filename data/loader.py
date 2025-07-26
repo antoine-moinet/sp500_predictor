@@ -1,4 +1,3 @@
-
 import os
 import pandas as pd
 import numpy as np
@@ -27,7 +26,8 @@ def load_carhart_factors(data_dir, log_ret_index):
 
     mom = np.log(pd.read_csv(mom_path, header=11, index_col=0, skipfooter=1, engine="python") / 100 + 1) * 252
     mom.index = pd.to_datetime(mom.index, format="%Y%m%d")
+    # Reindexing to ensure alignment with log returns index
     mom = mom.reindex(log_ret_index)
 
     carhart = ff_3.merge(mom, how="left", left_index=True, right_index=True)
-    return ff_3, mom, carhart
+    return carhart

@@ -1,0 +1,8 @@
+ipykernel
+scikit-learn
+numpy
+torch
+tensorflow
+pandas
+matplotlib
+seaborn

@@ -1,4 +1,3 @@
-
 import numpy as np
 
 def compute_sharpe(values, frequency=20):
